@@ -13,14 +13,14 @@ const EditCampground = () => {
 
    const handleSubmit = async (e) => {
       e.preventDefault();
-      await Axios.put(`http://localhost:8080/campgrounds/${id}`, input);
+      await Axios.put(`${process.env.REACT_APP_API_URL}/campgrounds/${id}`, input);
       history.push(`/campgrounds/${id}`);
       toast.success("Update success")
    };
 
    const fetchCampground = async () => {
       const response = await Axios.get(
-         `http://localhost:8080/campgrounds/${id}/edit`
+         `${process.env.REACT_APP_API_URL}/campgrounds/${id}/edit`
       );
       const foundCampground = response.data;
       setInput(foundCampground);

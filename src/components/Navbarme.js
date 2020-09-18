@@ -36,7 +36,7 @@ const Navbarme = () => {
          if(!authToken){
             return setUser()
          }
-         const response = await Axios.get("http://localhost:8080/getUser", {
+         const response = await Axios.get(`${process.env.REACT_APP_API_URL}/getUser`, {
             headers : {
                Authorisation : `Bearer ${authToken}`
             }

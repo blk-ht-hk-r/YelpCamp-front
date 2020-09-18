@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 const CampgroundCard = ({ campground, user, id, history }) => {
    const handleDelete = async () => {
       try {
-         await Axios.delete(`http://localhost:8080/campgrounds/${id}`);
+         await Axios.delete(`${process.env.REACT_APP_API_URL}APP_API_URL}RL}pgrounds/${id}`);
          history.push("/campgrounds");
          toast.sucess("Sorry to hear that you delted your Campground")
       } catch (err) {

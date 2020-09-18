@@ -13,7 +13,7 @@ const Register = () => {
       e.preventDefault();
       try {
          const res = await Axios.post(
-            "http://localhost:8080/register",
+            "${process.env.REACT_APP_API_URL}/register",
             credentials
          );
          const token = res.data;

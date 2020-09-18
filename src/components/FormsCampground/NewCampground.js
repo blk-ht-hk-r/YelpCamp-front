@@ -13,7 +13,7 @@ const NewCampgroud = () => {
       const auth_token = localStorage.getItem("auth_token");
       try {
          const response = await axios.post(
-            "http://localhost:8080/campgrounds",
+            `${process.env.REACT_APP_API_URL}/campgrounds`,
             input,
             {
                headers: {

@@ -18,7 +18,7 @@ const Campground = () => {
       try {
          const auth_token = localStorage.getItem("auth_token");
          const response = await Axios.get(
-            `http://localhost:8080/campgrounds/${id}`,
+            `${process.env.REACT_APP_API_URL}/campgrounds/${id}`,
             {
                headers: {
                   Authorisation: `Bearer ${auth_token}`,

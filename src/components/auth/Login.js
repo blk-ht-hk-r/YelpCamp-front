@@ -15,7 +15,7 @@ const Login = () => {
       e.preventDefault();
       try {
          const response = await Axios.post(
-            "http://localhost:8080/login",
+            `${process.env.REACT_APP_API_URL}/login`,
             credentials
          );
          const token = response.data;

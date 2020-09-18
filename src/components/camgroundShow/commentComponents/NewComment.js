@@ -25,7 +25,7 @@ const NewComment = ({ id }) => {
       setNewComment("");
 
       await Axios.post(
-         `http://localhost:8080/campgrounds/${id}/comments`,
+         `${process.env.REACT_APP_API_URL}/campgrounds/${id}/comments`,
          { newComment },
          {
             headers: {

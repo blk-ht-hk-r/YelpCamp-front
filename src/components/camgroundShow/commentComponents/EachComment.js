@@ -7,7 +7,7 @@ const EachComment = ({ comment, user, id }) => {
    const auth_token = localStorage.getItem("auth_token")
 
    const handleDelete = async() => {
-      await Axios.delete(`http://localhost:8080/campgrounds/${id}/comments/${comment._id}`, {
+      await Axios.delete(`${process.env.REACT_APP_API_URL}/campgrounds/${id}/comments/${comment._id}`, {
          headers : {
             Authorisation : `Bearer ${auth_token}`
          }
