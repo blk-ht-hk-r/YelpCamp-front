@@ -1,0 +1,97 @@
+.banner .campground-box {
+   margin: 5.5rem 6rem auto auto;
+   background: #251b1a;
+   padding: 40px;
+   border-radius: 3%;
+   text-align: center;
+   box-shadow: black;
+}
+
+.campground-box h1 {
+   color: darkgrey;
+   letter-spacing: 0.15rem;
+   text-transform: uppercase;
+   font-weight: 200;
+}
+.campground-box input[type="text"],
+.campground-box input[type="password"],
+.campground-box input[type="number"] {
+   border: 0;
+   background: #fbdfa7;
+   display: block;
+   height: 50%;
+   margin: 20px auto;
+   text-align: center;
+   padding: 14px 10px;
+   width: 25rem;
+   outline: none;
+   border-radius: 24px;
+   transition: 0.25s;
+}
+.campground-box textarea {
+   border: 0;
+   background: #fbdfa7;
+   display: block;
+   margin: 20px auto;
+   text-align: center;
+   padding: 14px 10px;
+   width: 25rem;
+   outline: none;
+   transition: 0.25s;
+   border-radius: 1rem;
+}
+.campground-box input[type="text"]:focus,
+.campground-box input[type="password"]:focus,
+.campground-box input[type="number"]:focus {
+   height: 50%;
+   width: 30rem;
+}
+.campground-box textarea:focus {
+   width: 30rem;
+}
+.campground-box input[type="text"]::placeholder,
+.campground-box input[type="password"]::placeholder,
+.campground-box input[type="number"]::placeholder {
+   color: unset;
+}
+
+.campground-box textarea::placeholder{
+    color: unset;
+    padding-top: 0.5rem;
+}
+
+.campground-box input[type="submit"] {
+   line-height: 110%;
+   border: 0;
+   background: none;
+   display: block;
+   margin: 35px auto;
+   text-align: center;
+   border: 2px solid darkgray;
+   padding: 14px 40px;
+   height: 0%;
+   outline: none;
+   color: darkgray;
+   border-radius: 24px;
+   transition: 0.25;
+   cursor: pointer;
+}
+.campground-box input[type="submit"]:hover {
+   line-height: 110%;
+   border: #fbdfa7;
+   background: lightslategray;
+   color: unset;
+}
+
+.campground-box .bottom-content {
+   color: darkgrey;
+}
+
+.campground-box a {
+   color: rgba(206, 88, 16, 0.6);
+}
+
+.campground-box a:hover {
+   text-decoration-line: unset;
+   color: rgba(206, 88, 16, 0.8);
+}

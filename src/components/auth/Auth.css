@@ -1,0 +1,75 @@
+.banner .box {
+   margin-top: 12rem;
+   background: #251b1a;
+   width: 90%;
+   padding: 40px;
+   border-radius: 3%;
+   text-align: center;
+   box-shadow: black;
+}
+
+.box h1 {
+   color: darkgrey;
+   letter-spacing: 0.15rem;
+   text-transform: uppercase;
+   font-weight: 200;
+}
+.box input[type="text"],
+.box input[type="password"] {
+   border: 0;
+   background: #fbdfa7;
+   display: block;
+   height: 50%;
+   margin: 20px auto;
+   text-align: center;
+   padding: 14px 10px;
+   width: 250px;
+   outline: none;
+   border-radius: 24px;
+   transition: 0.25s;
+}
+.box input[type="text"]:focus,
+.box input[type="password"]:focus {
+   height: 50%;
+   width: 280px;
+}
+.box input[type="text"]::placeholder,
+.box input[type="password"]::placeholder {
+   color: unset;
+}
+
+.box input[type="submit"] {
+   line-height: 110%;
+   border: 0;
+   background: none;
+   display: block;
+   margin: 35px auto;
+   text-align: center;
+   border: 2px solid darkgray;
+   padding: 14px 40px;
+   height: 0%;
+   outline: none;
+   color: darkgray;
+   border-radius: 24px;
+   transition: 0.25;
+   cursor: pointer;
+}
+.box input[type="submit"]:hover {
+    line-height: 110%;
+   border: #fbdfa7;
+   background: lightslategray;
+   color: unset;
+}
+
+.box .bottom-content {
+   color: darkgrey;
+}
+
+.box a{
+   color : rgba(206, 88, 16, .6);
+}
+
+.box a:hover{
+   text-decoration-line: unset;
+   color : rgba(206, 88, 16, .8)
+}

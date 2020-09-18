@@ -1,0 +1,33 @@
+.banner {
+   width: 100%;
+   background: url("../images/joshua-newton-8z9pi6GgOo4-unsplash.jpg") no-repeat;
+   background-size: cover;
+   background-position: center;
+   min-height: 750px;
+}
+
+.banner h3 {
+   margin-left: 50rem;
+   padding-top: 250px;
+   color: grey;
+   font-size: 80px;
+   font-weight: 700;
+   letter-spacing: 17px;
+   font-family: "Josefin Sans", sans-serif;
+}
+.banner p {
+   margin-left: 52rem;
+   color: grey;
+   font-weight: 300;
+   font-size: 1.3em;
+   letter-spacing: 0.25rem;
+   opacity: 1;
+   font-family: "Josefin Sans", sans-serif;
+}
+
+#theLargestLogo {
+   color: grey;
+   font-size: 4rem;
+   margin-left: 65rem;
+   margin-top: 2rem;
+}
