@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, useLocation } from "react-router-dom";
 import Navbarme from "./components/Navbarme";
 import Campgrounds from "./components/Campgrounds";
 import Campground from "./components/Campground";
@@ -10,10 +10,12 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/PrivateRoute";
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css"
+import "react-toastify/dist/ReactToastify.css";
+import Footer from "./components/Footer,";
 
 const App = () => {
-   console.log(process.env)
+   const location = useLocation();
+
    return (
       <div>
          <Navbarme />
@@ -40,9 +42,8 @@ const App = () => {
                <Home />
             </Route>
          </Switch>
-         <ToastContainer hideProgressBar="true"/>
-         <hr />
-         <div name="about">created by samyak</div>
+         {location.pathname !== "/" ? <Footer /> : null}
+         <ToastContainer hideProgressBar="true" autoClose={1000}/>
       </div>
    );
 };

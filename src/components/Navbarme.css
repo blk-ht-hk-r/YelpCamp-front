@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap");
 
-body,
-html {
+nav{
    font-family: "Josefin Sans", sans-serif;
 }
 
@@ -35,9 +34,16 @@ html {
 }
 
 .opaque-navbar.opaque {
-   background-color: #eeeeee;
+   /* background-color: #eeeeee; */
+   background-color: #dc3545;
    border: 0px;
    transition: background-color 0.5s ease 0s;
+}
+.opaque-navbar.opaque .container .navbar-brand{
+   color : white;
+}
+.opaque-navbar.opaque .container .navbar-collapse ul li a {
+   color : white;
 }
 
 @media (max-width: 992px) {

@@ -6,9 +6,11 @@ import CampgroundCard from "./camgroundShow/CampgroundCard";
 import CommentCard from "./camgroundShow/CommentCard";
 import socket from "../components/socket/socket";
 import { toast } from "react-toastify";
+import './camgroundShow/Campground.css'
 
 const Campground = () => {
    const [campground, setCampground] = useState();
+   const [createdAt, setCreatedAt] = useState()
    const [user, setUser] = useState();
 
    const { id } = useParams();
@@ -54,7 +56,7 @@ const Campground = () => {
    }, []);
 
    return (
-      <div id="campgroundsContainer" className="container mt-5">
+      <div id="campgroundsContainer" className="container">
          <div className="row">
             {campground ? (
                <>

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap");
+
 .banner .campground-box {
    margin: 5.5rem 6rem auto auto;
    background: #251b1a;
@@ -8,6 +10,7 @@
 }
 
 .campground-box h1 {
+   font-family: "Josefin Sans", sans-serif;
    color: darkgrey;
    letter-spacing: 0.15rem;
    text-transform: uppercase;

@@ -4,13 +4,19 @@ import Axios from "axios";
 import { toast } from "react-toastify";
 
 const CampgroundCard = ({ campground, user, id, history }) => {
+   const createdAt = new Date(Date.parse(campground.createdAt));
+   const date = createdAt.getDate()
+   const month = createdAt.toLocaleDateString("default", {month : "long"}).substr(0,3)
+
    const handleDelete = async () => {
       try {
-         await Axios.delete(`${process.env.REACT_APP_API_URL}APP_API_URL}RL}pgrounds/${id}`);
+         await Axios.delete(
+            `${process.env.REACT_APP_API_URL}/campgrounds/${id}`
+         );
          history.push("/campgrounds");
-         toast.sucess("Sorry to hear that you delted your Campground")
+         toast.success("Sorry to hear that you delted your Campground");
       } catch (err) {
-         console.log(err)
+         console.log(err);
       }
    };
 
@@ -23,7 +29,9 @@ const CampgroundCard = ({ campground, user, id, history }) => {
             <p className="card-text">{campground.body}</p>
             <hr />
             <p className="card-text text-muted">
-               <span>Submitted by {campground.author.username}</span>
+               <span>
+                   by {campground.author.username} at {`${date} ${month}`}
+               </span>
             </p>
             {user && user._id === campground.author.id && (
                <>

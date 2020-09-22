@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./Navbarme.css";
 import { useEffect } from "react";
 import socket from "./socket/socket";
@@ -47,6 +47,13 @@ const Navbarme = () => {
          if(err.response.status === 403){
             toast.warning("Huhm Trying to be smart! Poor u 😎")
          }
+         else if(err.response.status === 401){
+            toast.warning("Session Expired! Please Login to continue :)")
+            history.push("/login")
+         }
+         else{
+            console.log(err)
+         }
       }
    }
 
@@ -60,7 +67,7 @@ const Navbarme = () => {
       fetchUser();
 
       //If the user refeshed the page then the history.listen won't work as then it won't have any location parameter and so to actually decide the class of navbar we also have to add a if-else for each re-rendering of the navbar for the user refresh
-      if(history.location.pathname === "/campgrounds" || history.location.pathname === "/register" || history.location.pathname === "/login" || history.location.pathname === "/campgrounds/new"){
+      if(history.location.pathname === "/campgrounds" || history.location.pathname === "/register" || history.location.pathname === "/login" || history.location.pathname === "/campgrounds/new" || history.location.pathname === "/"){
          document.querySelector(".opaque-navbar").classList.remove("opaque");
          window.addEventListener("scroll", myFunction)
       }else{
@@ -68,7 +75,7 @@ const Navbarme = () => {
       }
    
       let unlisten = history.listen(location => {
-         if(location.pathname === "/campgrounds" || location.pathname === "/register" || location.pathname === "/login" || location.pathname === "/campgrounds/new"){
+         if(location.pathname === "/campgrounds" || location.pathname === "/register" || location.pathname === "/login" || location.pathname === "/campgrounds/new" || location.pathname === "/"){
             window.addEventListener("scroll", myFunction)
          }else{
             window.removeEventListener("scroll", myFunction)
@@ -90,9 +97,9 @@ const Navbarme = () => {
    return (
       <nav className="navbar navbar-dark fixed-top opaque-navbar opaque navbar-expand-lg">
          <div className="container">
-            <NavLink className="navbar-brand" to="/campgrounds">
+            <Link className="navbar-brand" to="/campgrounds">
                <i className="fas fa-map-signs"></i>
-            </NavLink>
+            </Link>
             <button
                type="button"
                className="navbar-toggler"
@@ -106,38 +113,33 @@ const Navbarme = () => {
                   {user ? (
                      <>
                         <li className="nav-item">
-                           <NavLink className="nav-link" to="#">
+                           <Link className="nav-link" to="#">
                               <i className="fas fa-user"></i>
                               {` ${user.username}`}
-                           </NavLink>
+                           </Link>
                         </li>
                         <li className="nav-item">
-                           <NavLink to="/campgrounds/new" className="nav-link">
+                           <Link to="/campgrounds/new" className="nav-link">
                               New
-                           </NavLink>
+                           </Link>
                         </li>
                         <li className="nav-item" onClick={handleLogout}>
-                           <NavLink className="nav-link" to="#">
+                           <Link className="nav-link" to="#">
                               logout
-                           </NavLink>
+                           </Link>
                         </li>
                      </>
                   ) : (
                      <>
                         <li className="nav-item">
-                           <NavLink to="#about" className="nav-link inactive">
-                              About
-                           </NavLink>
-                        </li>
-                        <li className="nav-item">
-                           <NavLink to="/register" className="nav-link">
+                           <Link to="/register" className="nav-link">
                               Register
-                           </NavLink>
+                           </Link>
                         </li>
                         <li className="nav-item">
-                           <NavLink to="/login" className="nav-link">
+                           <Link to="/login" className="nav-link">
                               Login
-                           </NavLink>
+                           </Link>
                         </li>
                      </>
                   )}

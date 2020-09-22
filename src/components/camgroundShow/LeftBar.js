@@ -10,7 +10,7 @@ const LeftBar = (props) => {
             <div className="card shadow-sm mt-2">
                <div className="card-header">
                   <i className="far fa-calendar-alt"></i>
-                  Booking Window
+                  {` Booking Window`}
                </div>
                <ul className="list-group list-group-flush">
                   <li className="list-group-item text-capitalize">Feb-June</li>
@@ -19,7 +19,7 @@ const LeftBar = (props) => {
             <div className="card shadow-sm mt-3">
                <div className="card-header">
                   <i className="far fa-smile"></i>
-                  Amenities
+                  {` Amenities`}
                </div>
                <ul className="list-group list-group-flush">
                   <li className="list-group-item text-capitalize">Hot</li>
@@ -28,7 +28,7 @@ const LeftBar = (props) => {
             <div className="card shadow-sm mt-3">
                <div className="card-header">
                   <i className="fas fa-phone"></i>
-                  Contact
+                  {` Contact`}
                </div>
                <ul className="list-group list-group-flush">
                   <li className="list-group-item">9568125761</li>

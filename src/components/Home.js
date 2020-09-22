@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
    return (
-      <div className="landing-body">
+      <div className="container">
          <div id="landing-header">
             <h1>Welcome To YelpCamp</h1>
             <Link to="/campgrounds" className="btn btn-lg btn-success">
