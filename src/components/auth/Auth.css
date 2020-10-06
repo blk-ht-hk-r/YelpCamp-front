@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap");
 
+.banner {
+   width: 100%;
+   background: url("../../images/Title.jpg") no-repeat;
+   background-size: cover;
+   background-position: center;
+   min-height: 750px;
+}
 .banner .box {
    margin-top: 12rem;
    background: #251b1a;
@@ -11,7 +18,7 @@
 }
 
 .box h1 {
-   font-family : "Josefin Sans", sans-serif;
+   font-family: "Josefin Sans", sans-serif;
    color: darkgrey;
    letter-spacing: 0.15rem;
    text-transform: uppercase;
@@ -58,7 +65,7 @@
    cursor: pointer;
 }
 .box input[type="submit"]:hover {
-    line-height: 110%;
+   line-height: 110%;
    border: #fbdfa7;
    background: lightslategray;
    color: unset;
@@ -68,11 +75,11 @@
    color: darkgrey;
 }
 
-.box a{
-   color : rgba(206, 88, 16, .6);
+.box a {
+   color: rgba(206, 88, 16, 0.6);
 }
 
-.box a:hover{
+.box a:hover {
    text-decoration-line: unset;
-   color : rgba(206, 88, 16, .8)
+   color: rgba(206, 88, 16, 0.8);
 }

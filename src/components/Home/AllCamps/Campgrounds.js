@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Campgroundscard from "./Campgroundscard";
-import Title from "./Title";
+import Campgroundscard from "./EachCamp/Campgroundscard";
+import Title from "../Title/Title";
 import Axios from "axios";
 
 const Campgrounds = () => {

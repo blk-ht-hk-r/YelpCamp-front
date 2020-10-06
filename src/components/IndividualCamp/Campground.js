@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import Axios from "axios";
-import LeftBar from "./camgroundShow/LeftBar";
-import CampgroundCard from "./camgroundShow/CampgroundCard";
-import CommentCard from "./camgroundShow/CommentCard";
-import socket from "../components/socket/socket";
+import LeftBar from "./LeftBar/LeftBar";
+import CampgroundCard from "./CampCard/CampgroundCard";
+import CommentCard from "./Comments/CommentCard";
+import socket from "../socket/socket";
 import { toast } from "react-toastify";
-import "./camgroundShow/Campground.css";
+import "./Campground.css";
 
 const Campground = () => {
    const [campground, setCampground] = useState();

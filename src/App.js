@@ -1,17 +1,17 @@
 import React from "react";
 import { Route, Switch, useLocation } from "react-router-dom";
-import Navbarme from "./components/Navbarme";
-import Campgrounds from "./components/Campgrounds";
-import Campground from "./components/Campground";
+import Navbarme from "./components/Navbar/Navbarme";
+import Campgrounds from "./components/Home/AllCamps/Campgrounds";
+import Campground from "./components/IndividualCamp/Campground";
 import NewCampground from "./components/FormsCampground/NewCampground";
-import Home from "./components/Home";
+import Home from "./components/Landing/Landing";
 import EditCampground from "./components/FormsCampground/EditCampground";
-import Register from "./components/auth/Register";
-import Login from "./components/auth/Login";
-import PrivateRoute from "./components/PrivateRoute";
+import Register from "./components/Auth/Register";
+import Login from "./components/Auth/Login";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Footer from "./components/Footer,";
+import Footer from "./components/Footer/Footer,";
 
 const App = () => {
    const location = useLocation();

@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import "./Navbarme.css";
 import { useEffect } from "react";
-import socket from "./socket/socket";
+import socket from "../socket/socket";
 import { useState } from "react";
 import Axios from "axios";
 import { toast } from "react-toastify";

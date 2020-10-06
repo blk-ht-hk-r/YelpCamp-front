@@ -1,6 +1,6 @@
 import React from "react";
-import NewComment from "./commentComponents/NewComment";
-import EachComment from "./commentComponents/EachComment";
+import NewComment from "./FormsComment/NewComment";
+import EachComment from "./EachComment/EachComment";
 
 const CommentCard = ({ comments, id, user }) => {
    return (

@@ -1,6 +1,6 @@
 import React from "react";
 import Axios from "axios";
-import EditComment from "./EditComment";
+import EditComment from "../FormsComment/EditComment";
 
 const EachComment = ({ comment, user, id }) => {
 
