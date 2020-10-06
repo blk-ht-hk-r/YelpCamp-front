@@ -43,7 +43,7 @@ const App = () => {
             </Route>
          </Switch>
          {location.pathname !== "/" ? <Footer /> : null}
-         <ToastContainer hideProgressBar="true" autoClose={1000}/>
+         <ToastContainer hideProgressBar={true} autoClose={1000}/>
       </div>
    );
 };

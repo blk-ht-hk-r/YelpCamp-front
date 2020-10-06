@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useHistory, useParams, Link } from "react-router-dom";
 import { useState } from "react";
 import Axios from "axios";
-import './Forms.css'
+import "./Forms.css";
 import { toast } from "react-toastify";
 
 const EditCampground = () => {
@@ -13,22 +13,24 @@ const EditCampground = () => {
 
    const handleSubmit = async (e) => {
       e.preventDefault();
-      await Axios.put(`${process.env.REACT_APP_API_URL}/campgrounds/${id}`, input);
-      history.push(`/campgrounds/${id}`);
-      toast.success("Update success")
-   };
-
-   const fetchCampground = async () => {
-      const response = await Axios.get(
-         `${process.env.REACT_APP_API_URL}/campgrounds/${id}/edit`
+      await Axios.put(
+         `${process.env.REACT_APP_API_URL}/campgrounds/${id}`,
+         input
       );
-      const foundCampground = response.data;
-      setInput(foundCampground);
+      history.push(`/campgrounds/${id}`);
+      toast.success("Update success");
    };
 
    useEffect(() => {
+      const fetchCampground = async () => {
+         const response = await Axios.get(
+            `${process.env.REACT_APP_API_URL}/campgrounds/${id}/edit`
+         );
+         const foundCampground = response.data;
+         setInput(foundCampground);
+      };
       fetchCampground();
-   }, []);
+   }, [id]);
 
    return (
       <div className="banner">

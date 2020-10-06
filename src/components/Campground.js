@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import Axios from "axios";
 import LeftBar from "./camgroundShow/LeftBar";
@@ -6,17 +6,16 @@ import CampgroundCard from "./camgroundShow/CampgroundCard";
 import CommentCard from "./camgroundShow/CommentCard";
 import socket from "../components/socket/socket";
 import { toast } from "react-toastify";
-import './camgroundShow/Campground.css'
+import "./camgroundShow/Campground.css";
 
 const Campground = () => {
    const [campground, setCampground] = useState();
-   const [createdAt, setCreatedAt] = useState()
    const [user, setUser] = useState();
 
    const { id } = useParams();
    const history = useHistory();
 
-   const fetchCampground = async () => {
+   const fetchCampground = useCallback(async () => {
       try {
          const auth_token = localStorage.getItem("auth_token");
          const response = await Axios.get(
@@ -28,19 +27,17 @@ const Campground = () => {
             }
          );
          const { foundCampground, loggedInUser, statusCode } = response.data;
-         if(statusCode === 403){
-            toast.warning("Trying be smart ass! Ohh Poor")
+         if (statusCode === 403) {
+            toast.warning("Trying be smart ass! Ohh Poor");
          }
          setCampground(foundCampground);
          setUser(loggedInUser);
       } catch (error) {
          console.log(error);
       }
-   };
+   }, [id]);
 
    useEffect(() => {
-
-
       fetchCampground();
 
       //setting up a event listener in the case of a comment addition
@@ -53,7 +50,7 @@ const Campground = () => {
          //Turning the socket of or removing the event listener
          socket.off("commenetChanged");
       };
-   }, []);
+   }, [fetchCampground]);
 
    return (
       <div id="campgroundsContainer" className="container">
